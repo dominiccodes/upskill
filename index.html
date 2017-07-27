@@ -4,45 +4,124 @@
 	<meta charset="UTF-8">
 	<title>Upskill Courses</title>
 	<meta name="description" content="Dominic Davies is training to be a web developer.  These are his notes taken during Upskills Ruby on Rails Bootcamp.">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="top">
 		<h1>Upskill Ruby on Rails Bootcamp</h1>
-		<p>These are my notes as I make my way through Upskills Ruby on Rails Bootcamp.</p>
-		<p>This site is hosted on github and is inspired by example.com</p>
-	</div>
-	
-	<div>
-		<h1>Intro</h1>
-		<p>The intro covers how computers work and how the internet works.  Quite straightforward.</p>
-	</div>	
-	
-	<div>
-		<h1>Deep Dive: Build a Blogging Platform</h1>
-		<p>Now we get our hands dirty with Ruby on Rails! I'm going to set up a repo for the section.</p>
-	</div>
-	
+			<p>These are my notes as I make my way through Upskills Ruby on Rails Bootcamp.</p>
+			<p>This site is hosted on github and is inspired by example.com</p>
 		
-			
-				
-					
-						
-							
-								
-									
-										
-											
-												
-													
-														
-															
-																
-																	
+		<h3>Intro</h3>
+			<p>The intro covers how computers work and how the internet works.  Quite straightforward.</p>
+	</div>
+	
+	<div>
+		<h2>Deep Dive: Build a Blogging Platform 1 and 2</h2>
+		<p>Now we get our hands dirty with Ruby on Rails! I'm going to set up a repo for <a href="https://github.com/dominiccodes/upskill-blog" target="_blank">the section</a>.</p>
+		<h3>Terminal Commands</h3>
+		<code>rails new blog</code>
+		<p>Then cd into the directory</p>
+		<code>
+			rails generate scaffold Post title:string body:text <br>
+			rails db:migrate
+		</code>
+		<p>That created a bunch of files and a database migration. We'll need to run rails db:migrate which will then allow us to save and store our posts. </p>
+			<p>
+				invoke  active_record
+      create    db/migrate/20170727153341_create_posts.rb<br>
+      create    app/models/post.rb<br>
+      invoke    test_unit
+      create      test/models/post_test.rb
+      create      test/fixtures/posts.yml
+      invoke  resource_route<br>
+       route    resources :posts<br>
+      invoke  scaffold_controller<br>
+      create    app/controllers/posts_controller.rb<br>
+      invoke    erb<br>
+      create      app/views/posts<br>
+      create      app/views/posts/index.html.erb<br>
+      create      app/views/posts/edit.html.erb<br>
+      create      app/views/posts/show.html.erb<br>
+      create      app/views/posts/new.html.erb<br>
+      create      app/views/posts/_form.html.erb<br>
+      invoke  assets<br>
+      invoke    scss<br>
+      create      app/assets/stylesheets/posts.scss
+			</p>
+	</div>
+	
+	<div>
+		<h2>Deep Dive: Build a Blogging Platform 3</h2>
+		<h3>Creating Blog Posts</h3>
+		<code>rails db:migrate
+		</code><p> created a table where we can store posts.</p>
+		<code>
+			$ rails db:migrate <br>
+== 20170727153341 CreatePosts: migrating ====================================== <br>
+-- create_table(:posts) <br>
+   -> 0.0029s  <br>
+== 20170727153341 CreatePosts: migrated (0.0030s) =============================
 
+		</code>
+		<p>Now we can create new posts but we need to style it.</p>
+	</div>
+	
+	
+	<!--	Deep Dive: Build a Blogging Platform 4	-->
+	<div>
+		<h2>Deep Dive: Build a Blogging Platform 4</h2>
+		<h3>Homepage and Bootstrap</h3>
+		<p>Our home page is the default Ruby on Rails page.  We need our posts page to be our index (home) page.</p>
+		
+		<p>In config/routes.rb</p>
+		<code>root 'posts#index'</code> 
+		
+		<h3>Bootstrap</h3>
+		<p>In app/views/layouts/application.html.erb</p>
+
+		<p>Go to <a href="https://www.bootstrapcdn.com/" target="_blank">BootstrapCDN</a>, complete CSS and copy the html link.</p>
+		
+		<p>Under title tag paste in the Bootstrap link.</p>
+		
+		<p>Above the yield we created a header section with jumbotron site-header classes.  Within that a container div for the text.</p>
+		
+		<p>We wrapped the yield in a container div.</p>
+
+		<p>To create a gradient for the jumbotron we visited <a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Ultimate CSS Gradient Generator</a> to style the site header section.</p>		
+		
+		<p>app/assets/stylesheets/scaffolds.scss,(Delete everything inside of this file)</p>		
+		</div>	
+		<!--	/.Deep Dive: Build a Blogging Platform 4	-->
+		
+		
+		<!--		Deep Dive: Build a Blogging Platform 5-->
+		<div>
+			<h2>Deep Dive: Build a Blogging Platform 5</h2>
+			<h3>Better Buttons and forms</h3>
+			<h4>app/views/posts/index.html.erb</h4>
+			<p>We start off by adding table class to our index page table section.  The result is really smart.</p>
+			<img src="img/rails-blog.jpg" alt="picture of our project so far">
+			<p>Every tutorial I've done recently has stripped out all the table elements from the index.  The body column will need truncating at some point, I'll be patient as I'm learning some really good practices.</p>
+			
+			<h4>Style the form partial.  app/views/posts/_form.html.erb</h4>
+			<ul>
+				<li>Added form-group Bootstrap class to the divs with field class.  Nothing much happens.</li>
+				<li>The real magic is adding the Bootstrap class form-control to the text field and text area.  Suddenly the forms looks smart and are responsive.</li>
+			</ul>
+			
+		</div>					
+		<!--		/.Deep Dive: Build a Blogging Platform 5-->
+						
+		
+		<!--		Deep Dive: Build a Blogging Platform 6	-->
+		<div>
+			<h2>Deep Dive: Build a Blogging Platform 6</h2>
+			<h3>Displaying the Date</h3>
+		</div>						
+		<!--		/.Deep Dive: Build a Blogging Platform 6		-->
+									
 																	
-																		
-																				
 																		
 	<footer id="bottom">copyright &copy; Dominic Davies 2017</footer>
 </body>

@@ -15,11 +15,18 @@ div {
 
 h1 {
 	text-align: center;
+	}
+
+img {
+	width: 80%;
+	margin-left: 10%;
 }
+
 a:link, a:visited {
 		color: #38488f;
 		text-decoration: none;
-}
+	}
+
 
 /*Mobile Styles*/
 
