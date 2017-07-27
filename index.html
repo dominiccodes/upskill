@@ -3,22 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Upskill Courses</title>
-	<meta name="description" content="Dominic Davies is training to be a web developer.  These are his notes taken during Upskills Ruby on Rails Bootcamp.">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+<!--	<link rel="stylesheet" href="css/style.css" type="text/css">-->
 </head>
 <body>
-	<div id="top">
-		<h1>Upskill Ruby on Rails Bootcamp</h1>
-			<p>These are my notes as I make my way through Upskills Ruby on Rails Bootcamp.</p>
-			<p>This site is hosted on github and is inspired by example.com</p>
-		
-		<h3>Intro</h3>
-			<p>The intro covers how computers work and how the internet works.  Quite straightforward.</p>
-	</div>
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+	<div class="jumbotron">
+  <h1>Upskill Ruby on Rails Bootcamp</h1>
+  <p>These are my notes as I make my way through Upskills Ruby on Rails Bootcamp. This site is hosted on github </p>
+  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+</div>
 	
 	<div>
 		<h2>Deep Dive: Build a Blogging Platform 1 and 2</h2>
-		<p>Now we get our hands dirty with Ruby on Rails! I'm going to set up a repo for <a href="https://github.com/dominiccodes/upskill-blog" target="_blank">the section</a>.</p>
+		<p>After a quick intro covering how computers work and how the internet works we get our hands dirty with Ruby on Rails! I'm going to set up a repo for <a href="https://github.com/dominiccodes/upskill-blog" target="_blank">the section</a>.</p>
 		<h3>Terminal Commands</h3>
 		<code>rails new blog</code>
 		<p>Then cd into the directory</p>
@@ -117,10 +147,23 @@
 		<!--		Deep Dive: Build a Blogging Platform 6	-->
 		<div>
 			<h2>Deep Dive: Build a Blogging Platform 6</h2>
-			<h3>Displaying the Date</h3>
+			<h3>Displaying the Date - injecting some Ruby</h3>
+			<h4>In app/views/posts/index.html.erb</h4>
+			<p>As the posts index is displayed in a table we first have to add the title of date to the table head.</p>
+			<p>Inside erb tags we use our first bit of ruby logic.  post.created_at.to_date, this adds a column to our table which will display the date a post was created.</p>
+			<h4>In app/views/posts/show.html.erb</h4>
+			<p>We also show the date when we click on a post to view it.  To do this we add another field and inject Ruby using erb tags.   @post.created_at.to_date.</p>
 		</div>						
 		<!--		/.Deep Dive: Build a Blogging Platform 6		-->
-									
+			<div>
+				<h4>Thoughts on the Rails Blog deep dive</h4>
+				<p>I'm happy with the project. I have a couple of takeaways</p>
+				<ul>
+					<li>Adding Bootstrap to Rails. I've seen it done a couple of ways now.  I prefer this one using the CDN.</li>
+					<li>Using Ruby to display the date a post was created.</li>
+				</ul>
+				<img src="img/finished-blog.JPG" alt="picture of my finished project">
+			</div>						
 																	
 																		
 	<footer id="bottom">copyright &copy; Dominic Davies 2017</footer>
